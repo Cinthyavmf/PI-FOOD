@@ -45,17 +45,22 @@
 
 }
 
-.circular {
+.img {
     margin-left: 1rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+     
+}
+
+.circular {
+    position: relative;
     width: 200px;
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
-}
-
-.img {
-    height: 100%;
-    width: auto;
+    box-shadow: 5px 5px 0px -10px rgba(0, 0, 0, 1);
 }
 
 .withDiets {

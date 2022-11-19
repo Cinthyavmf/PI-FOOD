@@ -1,4 +1,4 @@
-/* .title {
+.title {
     padding-top: 5rem;
     text-shadow: 2px 2px 4px rgba(27, 8, 8, 0.911);
     font-size: 3rem;
@@ -54,11 +54,20 @@ h3 {
     transition: 0.5s;
 }
 
-img {
+.img {
     margin-left: 1rem;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+     
+}
+
+.circular {
+    position: relative;
     width: 200px;
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
-     
-} */
+    box-shadow: 5px 5px 0px -10px rgba(0, 0, 0, 1);
+}
