@@ -61,7 +61,6 @@ const allRecipes = async () => {
     const api = await apiRecipes();
     const db = await dbRecipes();
     const all = [...api, ...db];
-    console.log(all)
     return all;
   } catch (error) {
     console.log(error);

@@ -28,8 +28,9 @@ const Home = function () {
     const first = (page - 1) * recipesPerPage;
     const last = page * recipesPerPage;
     const recipesPage = recipes.slice(first, last);
-
     console.log(recipes)
+
+
     useEffect(() => {
         if (recipes.length === 0) {
         dispatch(getRecipes());
@@ -107,7 +108,7 @@ const Home = function () {
         </nav>
         <div className={style.cards}>
             {recipes==="404"? history.push('/404notFound'):recipesPage?.map((r) =>                 
-                <Card key={r.id} id={r.id} name={r.name} img={r.image} diet={r.diets} />
+                <Card key={r.id} id={r.id} name={r.name} img={r.image} diet={r.diet} />
             )} 
         </div>
         <Pagination totalPages = {totalPages} page = {page} setPage = {setPage}/>    

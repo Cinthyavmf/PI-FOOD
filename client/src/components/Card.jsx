@@ -20,7 +20,7 @@ const Card = function(props) {
                             <img  className = {style.circular} src ={props.img} alt={props.names} width='200px'/>
                         </div>
                     <div>
-                        {(props.diet).map((d) => <p className={style.diets} key={d}>{d}</p>)}
+                        {(props.diet)?.map((d) => <p className={style.diets} key={d}>{d}</p>)}
                     </div>
                 </div>
             </div> 

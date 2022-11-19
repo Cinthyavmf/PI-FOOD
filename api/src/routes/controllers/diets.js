@@ -1,7 +1,9 @@
+const { Diet } = require ("../../db")
+
 const dietTypes = async () => {
     try {
-      const prediets = await Diet.findAll();
-      if (prediets.length) {
+      const prediets = await Diet?.findAll();
+      if (prediets?.length) {
         return prediets;
       }
       const types = [
@@ -25,7 +27,7 @@ const dietTypes = async () => {
           where: { name: d },
         });
       });
-      return await Diet.findAll();
+      return await Diet?.findAll();
     } catch (error) {
       console.log(error);
     }
