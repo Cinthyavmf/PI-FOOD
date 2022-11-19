@@ -1,0 +1,64 @@
+.title {
+    padding-top: 5rem;
+    text-shadow: 2px 2px 4px rgba(27, 8, 8, 0.911);
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    top: 3rem;
+}
+
+.landing {
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 1);
+    width: 50%;
+    background-color: rgba(255, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+
+    color: white;
+    transform: translate(50%, 0%);
+}
+
+.autor {
+    text-align: end;
+    font-size: small;
+    margin-right: 5rem;
+    text-shadow: 2px 2px 4px rgba(27, 8, 8, 0.911);
+    padding-bottom: 4rem;
+
+}
+
+h3 {
+    text-align: center;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(27, 8, 8, 0.911);
+}
+
+.start {
+    position:relative;
+    height: 4rem;
+    width: 15rem;
+    font-size: x-large;
+    border-radius: 5px;
+    border: none;
+    font-weight: 1px;
+    margin-top: 2.5rem;
+    color: white;
+    background-color: rgb(139, 56, 56);
+    margin-bottom: 2rem;
+    
+}
+
+.start:hover {
+    border: 2px solid white;
+    background-color: rgb(95, 27, 27);
+    transition: 0.5s;
+}
+
+img {
+    margin-left: 1rem;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+     
+}
