@@ -47,8 +47,8 @@
 
 .circular {
     margin-left: 1rem;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
     border-radius: 50%;
 }

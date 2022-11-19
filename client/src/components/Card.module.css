@@ -37,7 +37,7 @@
    cursor: pointer;
 }
 
-/* .img {
+.img {
     margin-left: 1rem;
     width: 100%;
     height: auto;
@@ -52,8 +52,8 @@
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
-    box-shadow: 5px 5px 0px -10px rgba(0, 0, 0, 1); */
-/* } */
+    box-shadow: 5px 5px 0px -10px rgba(0, 0, 0, 1);
+}
 
 .withDiets {
     display: flex;
