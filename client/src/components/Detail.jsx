@@ -28,7 +28,7 @@ const Detail = function() {
                     <img className = {style.circular} src ={detail.image} alt={detail.name}/>
                 </div>
                 <div>
-                    {detail.diets?.map((d) => <h4 className={style.diets} key = {d}>{d}</h4>)}
+                    {detail.diet?.map((d) => <h4 className={style.diets} key = {d}>{d}</h4>)}
                 </div>
                 <h4>Health Score: {detail.healthScore}</h4>
             </div>

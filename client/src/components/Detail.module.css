@@ -38,7 +38,6 @@
     flex-wrap: wrap;
     width: fit-content;
 
-    /* margin: 0.05rem 0.2rem 0.05rem 0.2rem; */
     font-size: smaller;
     padding: 0.1rem 0.3rem;
     border-radius: 5px;
@@ -46,7 +45,7 @@
 
 }
 
-.img {
+.circular {
     margin-left: 1rem;
     width: 250px;
     height: 250px;
@@ -54,7 +53,7 @@
     border-radius: 50%;
 }
 
-.circular {
+.img {
     height: 100%;
     width: auto;
 }
