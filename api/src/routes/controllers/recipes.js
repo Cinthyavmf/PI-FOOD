@@ -3,9 +3,8 @@ const { API_KEY } = process.env;
 const { Router } = require("express");
 const { Op } = require("sequelize");
 const axios = require("axios");
-const { Recipe, Diet } = require("../db");
+const { Recipe, Diet } = require("../../db");
 
-const router = Router();
 
 // GET /recipes?name="..."
 
@@ -132,22 +131,23 @@ const allNames = async (name) => {
   }
 };
 
-router.get("/", async (req, res) => {
-  const { name } = req.query;
-  try {
-    const totalRecipes = await allRecipes();
-    if (!name) {
-      return res.send(totalRecipes);
-    } else if (name) {
-      const totalNames = await allNames(name);
-      return res.send(totalNames);
-    } else {
-      return res.status(404).json({ msg: "Recipe Not Found" });
+const getRecipes = async (req, res) => {
+    const { name } = req.query;
+    try {
+      const totalRecipes = await allRecipes();
+      if (!name) {
+        return res.send(totalRecipes);
+      } else if (name) {
+        const totalNames = await allNames(name);
+        return res.send(totalNames);
+      } else {
+        return res.status(404).json({ msg: "Recipe Not Found" });
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
   }
-});
+
 
 const apiId = async (id) => {
   try {
@@ -209,18 +209,55 @@ const allIds = async (id) => {
   }
 };
 
-router.get("/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const ids = await allIds(id);
-    if (ids) {
-      return res.send(ids);
-    } else {
-      return res.status(404).json({ msg: "ID Not Found" });
+const getRecipesId = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const ids = await allIds(id);
+      if (ids) {
+        return res.send(ids);
+      } else {
+        return res.status(404).json({ msg: "ID Not Found" });
+      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
   }
-});
 
-module.exports = router;
+const postRecipe = async (req, res) => {
+    try {
+      const {
+        name,
+        image,
+        summary,
+        score,
+        healthScore,
+        instructions,
+        diets,
+        createdByUser,
+      } = req.body;
+      const newRecipe = await Recipe.create({
+        name,
+        image:
+          image ||
+          "https://p4.wallpaperbetter.com/wallpaper/314/740/853/vegetables-fork-spoon-plate-wallpaper-preview.jpg",
+        summary,
+        score,
+        healthScore,
+        instructions,
+        createdByUser,
+      });
+      const diet = await Diet.findAll({
+        where: { name: diets },
+      });
+  
+      newRecipe.addDiet(diet);
+  
+      // return res.status(200).send("Recipe created succesfully!");
+      return res.send(newRecipe);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+module.exports = {getRecipes, getRecipesId, postRecipe};
