@@ -21,9 +21,11 @@ const apiRecipes = async () => {
         diet: r.diets,
         score: r.spoonacularScore,
         summary: r.summary,
+        instructions: r.analyzedInstructions[0]?.steps.map((s) => s.number + ". " + s.step),
         time: r.readyInMinutes,
       };
     });
+    console.log(recipe);
     return recipe;
   } catch (error) {
     console.log(error);
@@ -48,6 +50,7 @@ const dbRecipes = async () => {
       diet: n.diets.map((d) => d.name),
       score: n.score,
       summary: n.summary,
+      instructions: n.instructions,
       createdByUser: n.createdByUser,
     }));
     return findRecipe;
@@ -81,6 +84,7 @@ const apiName = async (name) => {
             name: r.title,
             diet: r.diets,
             score: r.spoonacularScore,
+            instructions: r.instructions,
             summary: r.summary,
           };
         });
@@ -112,6 +116,7 @@ const dbName = async (name) => {
       diet: n.diets.map((d) => d.name),
       score: n.score,
       summary: n.summary,
+      instructions: n.instructions,
       createdByUser: n.createdByUser,
     }));
     return dbNames;
@@ -155,6 +160,7 @@ const apiId = async (id) => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
     );
     const detail = api.data;
+    console.log(detail)
     return {
       id: id,
       image: detail.image,
@@ -163,8 +169,9 @@ const apiId = async (id) => {
       summary: detail.summary,
       score: detail.spoonacularScore,
       healthScore: detail.healthScore,
-      instructions: detail.instructions,
+      instructions: detail.analyzedInstructions[0]?.steps.map((s) => s.number + ". " + s.step),
     };
+
   } catch (error) {
     console.log(error);
   }
@@ -243,7 +250,7 @@ const postRecipe = async (req, res) => {
         summary,
         score,
         healthScore,
-        instructions,
+        instructions: [...instructions],
         createdByUser,
       });
       const diet = await Diet.findAll({

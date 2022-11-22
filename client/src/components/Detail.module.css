@@ -54,14 +54,14 @@
      
 }
 
-.circular {
+/* .circular {
     position: relative;
     width: 200px;
     height: 200px;
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 5px 5px 0px -10px rgba(0, 0, 0, 1);
-}
+} */
 
 .withDiets {
     display: flex;

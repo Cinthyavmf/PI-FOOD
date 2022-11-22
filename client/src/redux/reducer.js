@@ -83,7 +83,7 @@ const rootReducer = (state = initialState, action) => {
 
         case FILTER_BY_DIETS: {
             const recipesDiets = action.payload 
-            ? state.showRecipes = state.allRecipes.filter((r) => r.diets.includes(action.payload))
+            ? state.showRecipes = state.allRecipes.filter((r) => r.diet.includes(action.payload))
             : state.showRecipes;
             console.log(state.showRecipes)
 

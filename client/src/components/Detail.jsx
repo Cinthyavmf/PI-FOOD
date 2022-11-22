@@ -12,6 +12,7 @@ const Detail = function() {
     let {id} = useParams();
     const dispatch = useDispatch();
     const detail = useSelector((state) => state.detail);
+    console.log(detail.instructions)
     
         
 
@@ -34,11 +35,11 @@ const Detail = function() {
             </div>
             <h4 className={style.title}>Summary</h4>
             <p dangerouslySetInnerHTML={{__html: detail.summary}}  className={style.summary} />
-            {detail.steps ?  
+            {detail.instructions ?  
             <>
                 <h4 className={style.title}>Instructions</h4>
                 <div className={style.summary}>
-                    {detail.steps?.map((s) => <p  key={s}>{s}</p>)}
+                    {detail.instructions?.map((s) =><p key={s}>{s}</p>)}
                 </div>
             </>           
                 : <></>
