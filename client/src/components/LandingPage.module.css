@@ -10,6 +10,7 @@
 .landing {
     align-items: center;
     justify-content: center;
+    text-align: center;
     box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 1);
     width: 50%;
     background-color: rgba(255, 0, 0, 0.7);
@@ -37,7 +38,7 @@ h3 {
 .start {
     align-items: center;
     text-align: center;
-    position:relative;
+    /* position:relative; */
     height: 4rem;
     width: 15rem;
     font-size: x-large;
