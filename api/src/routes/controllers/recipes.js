@@ -23,6 +23,7 @@ const apiRecipes = async () => {
         summary: r.summary,
         instructions: r.analyzedInstructions[0]?.steps.map((s) => s.number + ". " + s.step),
         time: r.readyInMinutes,
+        healthScore: r.healthScore
       };
     });
     console.log(recipe);
@@ -52,6 +53,7 @@ const dbRecipes = async () => {
       summary: n.summary,
       instructions: n.instructions,
       createdByUser: n.createdByUser,
+      healthScore: n.healthScore
     }));
     return findRecipe;
   } catch (error) {
@@ -86,6 +88,7 @@ const apiName = async (name) => {
             score: r.spoonacularScore,
             instructions: r.instructions,
             summary: r.summary,
+            healthScore: r.healthScore
           };
         });
         return names.filter((n) =>
@@ -118,6 +121,7 @@ const dbName = async (name) => {
       summary: n.summary,
       instructions: n.instructions,
       createdByUser: n.createdByUser,
+      healthScore: n.healthScore
     }));
     return dbNames;
   } catch (error) {

@@ -8,11 +8,11 @@ const LandingPage = function() {
             <h1 className={style.title}>Henry Recipes</h1>
             <h3>"let food be thy medicine and medicine be thy food."</h3>
             <h4 className={style.autor}>Hippocrates</h4>
-            <button className={style.start}>
-                <Link to= '/home'style = {{textDecoration:"none", color:"white"}}>
+            <Link to= '/home'style = {{textDecoration:"none", color:"white"}}>
+                <button className={style.start}>
                     Start!
-                </Link>
-            </button>
+                </button>
+            </Link>
         </div>
     )
 }
