@@ -52,7 +52,7 @@ const dbRecipes = async () => {
       score: n.score,
       summary: n.summary,
       instructions: n.instructions,
-      createdByUser: n.createdByUser,
+      // createdByUser: n.createdByUser,
       healthScore: n.healthScore
     }));
     return findRecipe;
@@ -120,7 +120,7 @@ const dbName = async (name) => {
       score: n.score,
       summary: n.summary,
       instructions: n.instructions,
-      createdByUser: n.createdByUser,
+      // createdByUser: n.createdByUser,
       healthScore: n.healthScore
     }));
     return dbNames;
@@ -198,7 +198,7 @@ const dbId = async (id) => {
       summary: idDb.summary,
       healthScore: idDb.healthScore,
       instructions: idDb.instructions,
-      createdByUser: idDb.createdByUser,
+      // createdByUser: idDb.createdByUser,
       diet: idDb.diets.map((d) => d.name),
     };
   } catch (error) {
@@ -240,11 +240,10 @@ const postRecipe = async (req, res) => {
         name,
         image,
         summary,
-        score,
         healthScore,
         instructions,
         diets,
-        createdByUser,
+        // createdByUser,
       } = req.body;
       const newRecipe = await Recipe.create({
         name,
@@ -252,10 +251,9 @@ const postRecipe = async (req, res) => {
           image ||
           "https://p4.wallpaperbetter.com/wallpaper/314/740/853/vegetables-fork-spoon-plate-wallpaper-preview.jpg",
         summary,
-        score,
         healthScore,
         instructions: [...instructions],
-        createdByUser,
+        // createdByUser,
       });
       const diet = await Diet.findAll({
         where: { name: diets },

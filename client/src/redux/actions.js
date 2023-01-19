@@ -12,7 +12,7 @@ export const NEXT_PAGE = 'NEXT_PAGE';
 export const PREV_PAGE = 'PREV_PAGE';
 
 
-const BACK_URL = 'http://localhost:3001';
+const BACK_URL = process.env.BACK;
 
 export function getRecipes() {
     return async function (dispatch) {

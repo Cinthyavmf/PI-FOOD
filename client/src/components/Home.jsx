@@ -28,7 +28,6 @@ const Home = function () {
     const first = (page - 1) * recipesPerPage;
     const last = page * recipesPerPage;
     const recipesPage = recipes.slice(first, last);
-    console.log(recipes)
 
 
     useEffect(() => {

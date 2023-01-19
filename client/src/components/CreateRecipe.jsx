@@ -116,6 +116,7 @@ const CreateRecipe = function() {
     }
 
     const handleSubmit = (e) =>{
+        console.log(input)
         e.preventDefault();
         if (Object.keys(error).length === 0 && input.diets.length > 0) {
             dispatch(createRecipe(input))
