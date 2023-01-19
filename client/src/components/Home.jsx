@@ -105,11 +105,11 @@ const Home = function () {
                 <Link to="/create"><button className={style.create}>Create a new recipe</button></Link>
             </div>
         </nav>
-        <div className={style.cards}>
+        {/* <div className={style.cards}>
             {recipes==="404"? history.push('/404notFound'):recipesPage.map((r) =>                 
                 <Card key={r.id} id={r.id} name={r.name} img={r.image} diet={r.diet} />
             )} 
-        </div>
+        </div> */}
         <Pagination totalPages = {totalPages} page = {page} setPage = {setPage}/>    
     </div>
     )
