@@ -16,9 +16,11 @@ const Home = function () {
     const history = useHistory();
     history.push('/home')
     
+    
     const dispatch = useDispatch();
     const recipes = useSelector((state) => state.showRecipes);
     const diets = useSelector((state) => state.diets);
+    console.log(recipes)
     const [, setOrder] = useState();
     const [name, setName] = useState();
     const recipesPerPage = 9;

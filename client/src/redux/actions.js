@@ -13,6 +13,7 @@ export const PREV_PAGE = 'PREV_PAGE';
 
 
 const BACK_URL = process.env.BACK;
+console.log(BACK_URL)
 
 export function getRecipes() {
     return async function (dispatch) {
