@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BACK_URL } from '../config.js';
+import BACK_URL from '../config.js';
 
 export const GET_RECIPES = 'GET_RECIPES';
 export const GET_RECIPE_BY_NAME = 'GET_RECIPE_BY_NAME';
