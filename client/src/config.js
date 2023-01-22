@@ -1,1 +1,1 @@
-export const BACK_URL = process.env.BACK
+export const BACK_URL = process.env.BACK_URL
