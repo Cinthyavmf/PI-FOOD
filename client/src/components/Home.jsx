@@ -20,7 +20,7 @@ const Home = function () {
     const dispatch = useDispatch();
     const recipes = useSelector((state) => state.showRecipes);
     const diets = useSelector((state) => state.diets);
-    console.log(recipes)
+
     const [, setOrder] = useState();
     const [name, setName] = useState();
     const recipesPerPage = 9;
@@ -37,7 +37,7 @@ const Home = function () {
         dispatch(getRecipes());
         dispatch(getDiets());}
     }, [dispatch, recipes]);
-    
+    console.log(recipes)
 
     const orderName = function(e) {
         e.preventDefault();
