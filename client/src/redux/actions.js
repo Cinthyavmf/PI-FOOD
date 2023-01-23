@@ -23,6 +23,7 @@ export function getRecipes() {
                 type: GET_RECIPES,
                 payload: url.data,
             });
+
         } catch(err) {
             console.log(err);
             return err;
