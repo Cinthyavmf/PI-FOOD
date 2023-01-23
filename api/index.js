@@ -20,10 +20,10 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { PORT } = require('./config.js');
-const cors = require("cors");
+
 
 // Syncing all the models at once.
-server.use(cors());
+
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, () => {
     console.log('%s listening at port'); // eslint-disable-line no-console
