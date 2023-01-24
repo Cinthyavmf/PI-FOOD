@@ -95,12 +95,12 @@ const Home = function () {
                     <option className={style.option} value="min/max">min/max</option>
                     <option className={style.option} value="max/min">max/min</option>
                 </select>
-                {/* <select className={style.search} onChange = {filterDiets}>
+                <select className={style.search} onChange = {filterDiets}>
                     <option className={style.option} defaultValue= "Filter by diet">Filter by diet</option>
                 {diets?.map((d) =>
                     <option name={d.name} key={d.name} value={d.name}>{d.name}</option>   
                 )}
-                </select> */}
+                </select>
             </div>
             <div className={style.bar}>
                 <button className={style.cleanFilters}  onClick={cleanFilters}>Clean Filters</button>

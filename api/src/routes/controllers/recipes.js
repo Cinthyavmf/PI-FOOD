@@ -85,7 +85,6 @@ const apiName = async (name) => {
             image: r.image,
             name: r.title,
             diet: r.diets,
-            score: r.spoonacularScore,
             instructions: r.instructions,
             summary: r.summary,
             healthScore: r.healthScore

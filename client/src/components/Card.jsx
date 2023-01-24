@@ -21,6 +21,7 @@ const Card = function(props) {
                         </div>
                     <div>
                         {(props.diet)?.map((d) => <p className={style.diets} key={d}>{d}</p>)}
+                        <h4>{props.healthScore}</h4>
                     </div>
                 </div>
             </div> 
