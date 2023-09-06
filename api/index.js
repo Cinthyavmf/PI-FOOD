@@ -26,6 +26,6 @@ const { PORT } = require('./config.js');
 
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, () => {
-    console.log('%s listening at port'); // eslint-disable-line no-console
+    console.log('%s listening at port ' + PORT); // eslint-disable-line no-console
   });
 });

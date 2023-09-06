@@ -18,7 +18,7 @@ console.log(BACK_URL)
 export function getRecipes() {
     return async function (dispatch) {
         try {
-            const url = await axios.get(BACK_URL + "/recipes");
+            const url = await axios.get(BACK_URL + "recipes");
             return dispatch({
                 type: GET_RECIPES,
                 payload: url.data,

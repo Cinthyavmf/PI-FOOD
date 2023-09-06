@@ -20,6 +20,7 @@ const Home = function () {
     const dispatch = useDispatch();
     const recipes = useSelector((state) => state.showRecipes);
     const diets = useSelector((state) => state.diets);
+    console.log(recipes)
 
     const [, setOrder] = useState();
     const [name, setName] = useState();
@@ -30,6 +31,7 @@ const Home = function () {
     const first = (page - 1) * recipesPerPage;
     const last = page * recipesPerPage;
     const recipesPage = recipes.slice(first, last);
+    console.log(recipesPage)
 
 
     useEffect(() => {
