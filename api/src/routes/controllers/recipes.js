@@ -5,6 +5,7 @@ const { Op } = require("sequelize");
 const axios = require("axios");
 const { Recipe, Diet } = require("../../db");
 
+console.log(API_KEY)
 
 // GET /recipes?name="..."
 
@@ -21,7 +22,7 @@ const apiRecipes = async () => {
         diet: r.diets,
         score: r.spoonacularScore,
         summary: r.summary,
-        instructions: r.analyzedInstructions[0]?.steps.map((s) => s.number + ". " + s.step),
+        //instructions: r.analyzedInstructions[0]?.steps.map((s) => s.number + ". " + s.step),
         time: r.readyInMinutes,
         healthScore: r.healthScore
       };

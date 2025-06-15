@@ -2,7 +2,7 @@ const PORT = process.env.PORT || 3001;
 
 const API_KEY = process.env.API_KEY;
 
-const DB_USER = process.env.DB_USER || 'postgres';
+const DB_USER = process.env.DB_USER || 'postgres'; 
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST || 'localhost';
 const DB_NAME = process.env.DB_NAME || 'food';
