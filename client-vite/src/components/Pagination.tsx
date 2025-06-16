@@ -30,7 +30,7 @@ const Pagination = function({page, setPage, totalPages}) {
     <div className={style.pagination}>
         {/* <h2>{currentPage} de {totalPages}</h2> */}
         <div className = {style.pages}>
-            <button className = {style.nextPrev} onClick = {handlePrev} disabled = {currentPage <= 1}>Prev.</button>
+            <button className = {style.nextPrev} onClick = {handlePrev} disabled = {currentPage <= 1} key = {page}>Prev.</button>
             {pages.map((p) => <button className = {style.pages} onClick = {() => {setCurrentPage(p); setPage(p)}} disabled={currentPage === p}>{p}</button>)}
             <button className = {style.nextPrev} onClick = {handleNext}disabled = {currentPage >= totalPages}>Next</button>
         </div>

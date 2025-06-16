@@ -5,7 +5,6 @@ const { Op } = require("sequelize");
 const axios = require("axios");
 const { Recipe, Diet } = require("../../db");
 
-console.log(API_KEY)
 
 // GET /recipes?name="..."
 
@@ -27,7 +26,7 @@ const apiRecipes = async () => {
         healthScore: r.healthScore
       };
     });
-    console.log(recipe);
+    //console.log(recipe);
     return recipe;
   } catch (error) {
     console.log(error);
@@ -164,7 +163,7 @@ const apiId = async (id) => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`
     );
     const detail = api.data;
-    console.log(detail)
+   // console.log(detail)
     return {
       id: id,
       image: detail.image,

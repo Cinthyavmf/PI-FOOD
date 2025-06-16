@@ -27,7 +27,7 @@ const CreateRecipe = function() {
         summary: "",
         diets: [],
         healthScore: "",
-        steps: "",
+        steps: [],
       });
 
     const handleChange = (e) => {
@@ -53,12 +53,12 @@ const CreateRecipe = function() {
 
         setInput({
             ...input,
-            steps: [e.target.value],
+            steps: e.target.value,
         });
         setError(
             validate({
                 ...input,
-                steps: [e.target.value],
+                steps: e.target.value,
             }
         )
         )
@@ -98,7 +98,7 @@ const CreateRecipe = function() {
             error.summary = "The summary must have at least 40 characters."
         }
 
-        if(input.steps && input.steps[0].length > 0 && input.steps[0].length < 80) {
+        if(input.steps && input.steps.length > 0 && input.steps.length < 80) {
             error.steps = "The instructions must have at least 80 characters."
         }
      
@@ -129,7 +129,7 @@ const CreateRecipe = function() {
                 instructions: "",
               });
               alert("Recipe created succesfully!")
-              navigate.push('/home')
+              navigate('/home')
         }
         else {
             alert("You must complete all fields.")
@@ -163,7 +163,7 @@ const CreateRecipe = function() {
                 <label>
                     Instructions: 
                 </label>
-                <textarea placeholder = "instructions...(optional)" className={style.textarea} value = {[input.steps]} type='textarea' onChange={handleChangeSteps} name='steps'/> 
+                <textarea placeholder = "instructions...(optional)" className={style.textarea} value = {input.steps} type='textarea' onChange={handleChangeSteps} name='steps'/> 
                 {error.steps && <p className={style.error}>{error.steps}</p>}
                 <label>
                     Image: 
@@ -177,7 +177,7 @@ const CreateRecipe = function() {
                     {diets.map((d) => 
                         <label className = {style.diets} htmlFor={d.name} key={d.name}>
                             <div  className = {style.diet}>
-                                <input onClick={handleCheck} key = {d.name} type ='checkbox' value = {d.name}/><span>{d.name + "    "} </span>
+                                <input onClick={handleCheck} type ='checkbox' value = {d.name}/><span>{d.name + "    "} </span>
                             </div>
                         </label>)
                     }
